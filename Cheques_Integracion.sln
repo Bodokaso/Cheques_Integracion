@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cheques_Integracion", "Cheques_Integracion\Cheques_Integracion.csproj", "{6089B581-F593-492B-80D8-DBD2AA28CE95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6089B581-F593-492B-80D8-DBD2AA28CE95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6089B581-F593-492B-80D8-DBD2AA28CE95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6089B581-F593-492B-80D8-DBD2AA28CE95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6089B581-F593-492B-80D8-DBD2AA28CE95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7BABE3A-0B7D-45FD-8B68-82D4135BFED6}
+	EndGlobalSection
+EndGlobal
