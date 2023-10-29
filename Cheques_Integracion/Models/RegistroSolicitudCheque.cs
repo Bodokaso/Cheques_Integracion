@@ -19,5 +19,5 @@ public partial class RegistroSolicitudCheque
 
     public string? CuentaContableRelacionada { get; set; }
 
-    public virtual Proveedore? ProveedorNavigation { get; set; }
+    public virtual Proveedores? ProveedorNavigation { get; set; }
 }
