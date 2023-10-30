@@ -6,7 +6,7 @@ namespace Cheques_Integracion.Models;
 
 public partial class Usuario
 {
-    public int IdUsuario { get; set; }
+    public int Id { get; set; }
     [Required]
     public string NombreCompleto { get; set; }
     [Required]
