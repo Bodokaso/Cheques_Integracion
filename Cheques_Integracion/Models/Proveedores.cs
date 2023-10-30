@@ -6,7 +6,7 @@ namespace Cheques_Integracion.Models;
 
 public partial class Proveedore
 {
-    public int IdProveedor { get; set; }
+    public int Id { get; set; }
     [Required]
     public string Nombre { get; set; }
     [Required]
