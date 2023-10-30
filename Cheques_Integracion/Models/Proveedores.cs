@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cheques_Integracion.Models;
 
 public partial class Proveedore
 {
-    public int Id { get; set; }
-
-    public string? Nombre { get; set; }
-
-    public string? TipoPersona { get; set; }
-
-    public string? NumeroIdentificacion { get; set; }
-
-    public decimal? Balance { get; set; }
-
-    public string? CuentaContableProveedor { get; set; }
-
-    public string? Estado { get; set; }
+    public int IdProveedor { get; set; }
+    [Required]
+    public string Nombre { get; set; }
+    [Required]
+    public string TipoPersona { get; set; }
+    [Required]
+    public string NumeroIdentificacion { get; set; }
+    [Required]
+    [Range(1, double.MaxValue)]
+    public double Balance { get; set; }
+    [Required]
+    public string CuentaContableProveedor { get; set; }
+    [Required]
+    public bool Estado { get; set; }
 
     public virtual ICollection<RegistroSolicitudCheque> RegistroSolicitudCheques { get; set; } = new List<RegistroSolicitudCheque>();
 }
