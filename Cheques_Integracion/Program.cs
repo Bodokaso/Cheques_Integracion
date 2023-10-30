@@ -1,4 +1,8 @@
+using Cheques_Integracion;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("ConnStr")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
