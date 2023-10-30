@@ -6,7 +6,7 @@ namespace Cheques_Integracion.Models;
 
 public partial class RegistroSolicitudCheque
 {
-    public int IdSolicitud { get; set; }
+    public int Id { get; set; }
     [Required]
     public string NumeroSolicitud { get; set; }
     [Required]
