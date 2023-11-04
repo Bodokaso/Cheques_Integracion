@@ -4,27 +4,53 @@
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .lowered-container {
+            margin-top: 18%;
+        }
+    </style>
 </head>
 <body>
-    <form asp-controller="Access" asp-action="Login" method="post">
-        <h1>Login</h1>
-        <input type="email" placeholder="Email" asp-for="Correo" />
-        <input type="password" placeholder="PassWord" asp-for="Clave" />
-
-        <button type="submit">Login</button>
-
-        @if (ViewData["ValidateMessage"] != null)
-        {
-            <br />
-            <br />
-            <label>@ViewData["ValidateMessage"]</label>
-        }
-
-    </form>
+    <div class="container lowered-container">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <form asp-controller="Access" asp-action="Login" method="post" class="form-horizontal">
+                    <h1>Login</h1>
+                    <div class="form-group">
+                        <label class="control-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Email" asp-for="Correo" />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <input type="password" class="form-control" placeholder="Password" asp-for="Clave" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+    @if (ViewData["ValidateMessage"] != null)
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div class="alert alert-danger">
+                        @ViewData["ValidateMessage"]
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+        </div>
+    }
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
