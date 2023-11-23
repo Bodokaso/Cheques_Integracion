@@ -1,0 +1,61 @@
+﻿@model Cheques_Integracion.Models.Usuario;
+@{
+    Layout = "_Login";
+}
+
+<div class="container-fluid">
+    <h2>Iniciar Sesion</h2>
+    <form asp-controller="Login" asp-action="Login" method="post">
+        @*<div class="row">
+            <div class="col-6 mb-3">
+                <label for="NombreCompleto" class="form-label">Nombre Completo</label>
+                <input name="NombreCompleto" type="text" class="form-control" id="NombreCompleto" required>
+            </div>
+
+        </div>*@
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="Correo" class="form-label">E-mail</label>
+                <input name="Correo" type="text" class="form-control" id="Correo" required>
+            </div>
+            <div class="col-6 mb-3">
+                <label for="Clave" class="form-label">Clave</label>
+                <input name="Clave" type="password" class="form-control" id="Clave" required>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-6 mb-3">
+                <a class="link-primary" asp-area="" asp-controller="Login" asp-action="Registro">Registrarse</a>
+            </div>
+            
+
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-success" id="saveButton">Login</button>
+            </div>
+        </div>
+        @if (ViewData["ValidateMessage"] != null)
+        {
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-4">
+                        <div class="alert alert-danger">
+                            @ViewData["ValidateMessage"]
+                        </div>
+                    </div>
+                    <div class="col-sm-4"></div>
+                </div>
+            </div>
+        }
+        <script>
+            var error = '@TempData["err"]';
+            if (error) {
+                alert(error);
+            }
+        </script>
+    </form>
+</div>

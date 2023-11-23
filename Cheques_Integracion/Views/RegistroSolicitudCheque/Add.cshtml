@@ -1,0 +1,84 @@
+﻿@{
+}
+@model RegistroSolicitudCheque
+
+<div class="container-fluid">
+    <h2>Registro de Solicitud de Cheque</h2>
+    <form asp-controller="RegistroSolicitudCheque" asp-action="Add" method="post">
+        <div class="row">
+            @*<div class="col-6 mb-3">
+                <label for="NumeroSolicitud" class="form-label">No. Solicitud</label>
+                <input name="NumeroSolicitud" type="text" class="form-control" id="NumeroSolicitud">
+            </div>*@
+
+            <div class="col-6 mb-3">
+                <label for="Proveedor" class="form-label">Proveedor</label>
+                <select name="Proveedor" class="form-select form-select-sm" aria-label=".form-select-sm example" id="Proveedor" asp-items="@ViewBag.Proveedor">
+                    <option value="">Proveedor</option>
+                </select>
+            </div>
+
+
+
+        </div>
+        <div class="row">
+
+            @*<div class="col-6 mb-3">
+                <label for="InvoiceNumber" class="form-label">No. Factura</label>
+                <select name="InvoiceNumber" class="form-select form-select-sm" aria-label=".form-select-sm example" id="invoiceNumber" asp-items="@ViewBag.PaymentConcept">
+                    <option value="">No. Factura</option>
+                </select>
+            </div>*@
+
+
+            <div class="col-6 mb-3">
+                <label for="Monto" class="form-label">Monto</label>
+                <input min="0" name="Monto" type="number" class="form-control" id="Monto" required>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group">
+                <label asp-for="FechaRegistro" class="control-label">Fecha Registro</label>
+                <input asp-for="FechaRegistro" class="form-control" />
+                <span asp-validation-for="FechaRegistro" class="text-danger"></span>
+            </div>
+            
+
+        </div>
+
+        <div class="row">
+            @*<div class="col-6 mb-3">
+                <label for="Estado" class="form-label">Estado</label>
+                <select name="Estado" class="form-select form-select-sm" aria-label=".form-select-sm example" id="Estado">
+                    <option value="Cheque Generado">Cheque Generado</option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Anulada">Anulada</option>
+                </select>
+            </div>*@
+        </div>
+
+        <div class="row">
+            @*<div class="col-6 mb-3">
+                <label for="CuentaContableProveedor" class="form-label">C.C. Proveedor</label>
+                <input name="CuentaContableProveedor" type="text" class="form-control" id="CuentaContableProveedor">
+            </div>*@
+            
+        </div>
+
+        <div class="row">
+            <div class="col-12 mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-success" id="saveButton">Guardar</button>
+            </div>
+        </div>
+
+        <script>
+            var error = '@TempData["err"]';
+            if (error) {
+                alert(error);
+            }
+        </script>
+
+    </form>
+</div>

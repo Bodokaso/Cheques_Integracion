@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "_Login";
+}
+
+<div class="container-fluid">
+    <h2>Registro de Usuario</h2>
+    <form asp-controller="Login" asp-action="Registro" method="post">
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="NombreCompleto" class="form-label">Nombre Completo</label>
+                <input name="NombreCompleto" type="text" class="form-control" id="NombreCompleto" required>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="Correo" class="form-label">E-mail</label>
+                <input name="Correo" type="text" class="form-control" id="Correo" required>
+            </div>
+            <div class="col-6 mb-3">
+                <label for="Clave" class="form-label">Clave</label>
+                <input name="Clave" type="number" class="form-control" id="Clave" required>
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-12 mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-success" id="saveButton">Guardar</button>
+            </div>
+        </div>
+        <script>
+            var error = '@TempData["err"]';
+            if (error) {
+                alert(error);
+            }
+        </script>
+    </form>
+</div>
