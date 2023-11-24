@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cheques_Integracion.Models
+
 {
     public class Proveedore
     {
