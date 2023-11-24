@@ -1,0 +1,28 @@
+﻿@model ConceptosPago
+@{
+}
+
+<div class="container-fluid">
+    <h2>Modificar Concepto De Pago</h2>
+    <form asp-controller="ConceptosPago" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="row">
+            <div class="col-6 mb-3">
+                <label for="Descripcion" class="form-label">Descripcion</label>
+                <input asp-for="Descripcion" name="Descripcion" type="text" class="form-control" id="Descripcion">
+            </div>
+            <div class="col-6 mb-3">
+                <label for="Estado" class="form-label">Estado</label>
+                <select asp-for="Estado" name="Estado" class="form-select form-select-sm" aria-label=".form-select-sm example" id="Estado">
+                    <option value="true">Activo</option>
+                    <option value="false">Inactivo</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-3 d-flex justify-content-end">
+                <button type="submit" class="btn btn-outline-success" id="saveButton">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>

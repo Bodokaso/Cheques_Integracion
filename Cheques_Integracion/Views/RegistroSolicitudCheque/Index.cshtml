@@ -1,0 +1,66 @@
+﻿@model List<RegistroSolicitudCheque>
+@{
+    ViewData["Title"] = "Registro Cheque";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Solicitudes de Cheque</h2>
+        <div>
+            <a id="add" class="btn btn-primary" asp-controller="RegistroSolicitudCheque" asp-action="Add">Agregar</a>
+            <a id="add" class="btn btn-info" asp-controller="RegistroSolicitudCheque" asp-action="">Asiento Contable</a>
+        </div>
+        
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">
+                    No. Solicitud
+                </th>
+                <th scope="col">
+                    Proveedor
+                </th>
+                <th scope="col">
+                    Monto
+                </th>
+                <th scope="col">Fecha Registro</th>
+                <th scope="col">
+                    Estado
+                </th>
+                <th scope="col">C.C. Proveedor</th>
+                <th scope="col">C.C Relacionada</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var element in Model)
+            {
+                
+                <tr>
+                    <td>@Html.DisplayFor(m => element.NumeroSolicitud)</td>
+                    <td>@Html.DisplayFor(m => element.Proveedor)</td>
+                    <td>@Html.DisplayFor(m => element.Monto)</td>
+                    <td>@Html.DisplayTextFor(m => element.FechaRegistroString)</td>
+                    <td>@Html.DisplayFor(m => element.Estado)</td>
+                    <td>@Html.DisplayFor(m => element.CuentaContableProveedor)</td>
+                    <td>@Html.DisplayFor(m => element.CuentaContableRelacionada)</td>
+                    <td>
+                        <a class="btn btn-success" id="" asp-controller="RegistroSolicitudCheque" asp-action="UpdateC" asp-route-id="@element.Id">Generar</a>
+                        <a class="btn btn-secondary" id="" asp-controller="RegistroSolicitudCheque" asp-action="UpdateA" asp-route-id="@element.Id">Anular</a>
+                        <a class="btn btn-warning" id="edit" asp-controller="RegistroSolicitudCheque" asp-action="EditView" asp-route-id="@element.Id">Editar</a>
+                        <a class="btn btn-danger" id="delete" asp-controller="RegistroSolicitudCheque" asp-action="Delete" asp-route-id="@element.Id">Eliminar</a>
+                    </td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td>
+
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

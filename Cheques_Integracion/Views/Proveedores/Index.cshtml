@@ -1,0 +1,69 @@
+﻿@model List<Proveedore>
+@{
+    ViewData["Title"] = "Proveedores";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between mb-3">
+        <h2>Proveedores</h2>
+
+
+       
+        <div>
+            <a id="add" class="btn btn-primary" asp-controller="Proveedores" asp-action="Add">Agregar</a>
+            <a id="searchButton" class="btn btn-primary" asp-controller="Proveedores" asp-action="Search" onclick="editSearch()">Buscar</a>
+            <input name="parametro" type="text" class="form-control" id="parametro">
+        </div>
+
+
+
+
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Tipo Persona</th>
+                <th scope="col">Numero Identificacion</th>
+                <th scope="col">Balance</th>
+                <th scope="col">Cuenta Contable</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var element in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => element.Nombre)</td>
+                    <td>@Html.DisplayFor(m => element.TipoPersona)</td>
+                    <td>@Html.DisplayFor(m => element.NumeroIdentificacion)</td>
+                    <td>@Html.DisplayFor(m => element.Balance)</td>
+                    <td>@Html.DisplayFor(m => element.CuentaContableProveedor)</td>
+                    <td>
+
+                        @if (element.Estado)
+                        {
+                            <span>Activo</span>
+                        }
+                        else
+                        {
+                            <span>Inactivo</span>
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-success" id="edit" asp-controller="Proveedores" asp-action="EditView" asp-route-id="@element.Id">Editar</a>
+                        <a class="btn btn-danger" id="delete" asp-controller="Proveedores" asp-action="Delete" asp-route-id="@element.Id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    
+    <script>
+        function editSearch() {
+            let value = document.getElementById("parametro").value;
+            document.getElementById("searchButton").href = "/Proveedores/" + value;
+        }
+    </script>
+</div>
