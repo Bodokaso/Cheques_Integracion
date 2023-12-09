@@ -70,20 +70,20 @@
     <script>
         $(document).ready(function () {
             const data = {
-                "descripcion": "Asiento de Cheques correspondiente al periodo 2023-12",
+                "descripcion": "Asiento de Cheques correspondiente al periodo 2023-12-09",
                 "idAuxiliar": 9,
                 "cuentas": [
                     {
                         "idCuentaContable": 82,
                         "descripcion": "Cuenta x pagar proveedor x",
                         "tipoMovimiento": "DB",
-                        "monto": 12.89
+                        "monto": 9999.89
                     },
                     {
                         "idCuentaContable": 83,
-                        "descripcion": "",
+                        "descripcion": "Cuenta y pagar proveedor y",
                         "tipoMovimiento": "CR",
-                        "monto": 12.89
+                        "monto": 9999.89
                     }
                 ]
             }
@@ -97,11 +97,11 @@
                     data: JSON.stringify(data),
                     success: function (data) {
                         // Maneja el éxito de la llamada
-                        alert(data); // Puedes mostrar un mensaje de éxito o realizar otras acciones
+                        toastr.success('Datos enviados exitosamente.'); // Puedes mostrar un mensaje de éxito o realizar otras acciones
                     },
                     error: function (error) {
                         // Maneja errores de la llamada
-                        alert('Error al enviar la solicitud: ' + error.responseText);
+                        toastr.error('Error al enviar la solicitud: ' + error.responseText);
                     }
                 });
             });
